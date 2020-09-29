@@ -1,13 +1,11 @@
 
 document.write("Hello!");
 
-document.getElementById("root").innerHTML = "Hello !!!";
-
 console.log("Hello this is a message from javascript. Showing in console!")
 
 window.alert("This is a Alert. Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.");
 
-document.write("<h2>Hello this text is added at the bottom of the body.</h2>");
+document.write("<h2>Hello, this text is added at the bottom</h2>");
 
 //------------------------------- Single Line Comment ------------------------------------------
 
@@ -15,7 +13,12 @@ document.write("<h2>Hello this text is added at the bottom of the body.</h2>");
  multi-line comment
  */
 
-var headline = document.getElementById("changeMe");
+var headline = document.getElementById("welcomeMessage");
+
+// three ways, same result.
+console.log(headline);
+console.log(document.getElementsByTagName("h1").item(0));
+console.log(document.getElementsByClassName("primary").item(0));
 
 headline.innerHTML = "Hello World Wide Web!";
 headline.style.color = "Pink";
@@ -31,14 +34,14 @@ console.log("This is a unordered List it has the Class names of: " + ulElements[
 //-------------------------------------------------------------------------
 
 
-var btn = document.getElementById("btnDont");
+var btn = document.getElementsByTagName("button").item(0);
 
 btn.innerHTML = "Click Me!";
 
 btn.addEventListener("click", changeUl)
 
 function changeUl() {
-    //ulElements[0].style.backgroundColor = "Green";
+
 
     ulElements[0].innerHTML = "<li>Cat</li> <li>Dog</li> <li>Horse</li>";
 
