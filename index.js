@@ -1,6 +1,3 @@
-
-document.write("Hello!");
-
 console.log("Hello this is a message from javascript. Showing in console!")
 
 window.alert("This is a Alert. Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.");
@@ -98,7 +95,46 @@ for (var index = 0; index < ticTacBoard.children.length; index++){
         element.style.backgroundColor = 'Black';
     }
 
-
+}
 //-------------------------------------------------------------------------
 
-}
+    function resetText(param){
+        param.innerHTML = "Hover Me!";
+    }
+
+
+    // Connecting to the onmouseover on the button element.
+    function textChange() {
+        document.getElementById("textTrigger1").innerHTML = "You see, It works!";
+    }
+
+    document.getElementById("textTrigger2").onmouseover = function () {
+        document.getElementById("textTrigger2").innerHTML = "You see, It works, Right?!";
+    };
+
+    document.getElementById("textTrigger3").addEventListener("mouseover", function () {
+        document.getElementById("textTrigger3").innerHTML = "You see, It works Right?! I hope soo..";
+    });
+    document.getElementById("textTrigger3").addEventListener("mouseleave", function () {
+        resetText(this)
+        }
+     );
+
+    //-------------------------------------------------------------------------
+    console.log("Adding A Element with JS");
+
+
+    var node = document.createElement("h1");
+    var textNode = document.createTextNode("This element is created with JS");
+
+    var attribute = document.createAttribute("class");
+    console.log(attribute);
+    attribute.value = "primary";
+
+    console.log(node);
+    console.log(textNode);
+    node.appendChild(textNode);
+    document.getElementById("addStuff").appendChild(node);
+
+
+
